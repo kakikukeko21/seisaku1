@@ -4,16 +4,14 @@ namespace App\Http\Controllers;
 
 use App\Post;
 use Illuminate\Http\Request;
-use App\Shimei;
-use App\Http\Requests\CommentRequest;
-use App\Comment;
+use App\Name;
 
 
 class PostController extends Controller
 {
-     public function index(Post $post)
+     public function index(Post $post,Name $name)
      {
-       return view('posts/index')->with(['posts' => $post->getPaginateByLimit()]);
+       return view('posts/index')->with(['posts' => $post->getPaginateByLimit(),'names' => $name->get()]);
      } 
      
     public function show(Post $post)
@@ -50,9 +48,9 @@ class PostController extends Controller
      {
         return view('posts/bihin');
      }
-    
-     public function shimei()
+     
+     public function shimei(name $name)
      {
-        return view('posts/shimei');
+    return view('names/shimei')->with(['names' => $name->get()]);;
      }
 }

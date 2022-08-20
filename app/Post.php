@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Post extends Model
 {
-     use SoftDeletes;
+    use SoftDeletes;
     
     protected $fillable = [
         'title',
@@ -18,9 +18,9 @@ class Post extends Model
     {
     return $this->orderBy('updated_at', 'DESC')->paginate($limit_count);
     }
-
-    public function shimei()
+    
+    public function name()
     {
-    return $this->belongsTo('App\Shimei');
-    }    
+    return $this->belongsTo('App\name');
+    }
 }

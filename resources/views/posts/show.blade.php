@@ -13,9 +13,9 @@
         <h1 class="title">
             {{ $post->title }}
         </h1>
-          <div class="content">
+        <div class="content">
             <div class="content__post">
-             </div>
+            </div>
         </div>
         <div class="footer">
             <a href="/">戻る</a>

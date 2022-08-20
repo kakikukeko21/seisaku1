@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateShimeisTable extends Migration
+class CreateNamesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateShimeisTable extends Migration
      */
     public function up()
     {
-        Schema::create('shimeis', function (Blueprint $table) {
+        Schema::create('names', function (Blueprint $table) {
             $table->increments('id');
             $table->string('title', 50);
             $table->timestamps();
@@ -28,6 +28,6 @@ class CreateShimeisTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('shimeis');
+        Schema::dropIfExists('names');
     }
 }
