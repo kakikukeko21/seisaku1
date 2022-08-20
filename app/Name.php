@@ -3,14 +3,16 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
-class Shimei extends Model
+class Name extends Model
 {
-     use SoftDeletes;
+    use SoftDeletes;
     
     protected $fillable = [
         'title',
     ];
+    
     
     public function posts()   
     {
