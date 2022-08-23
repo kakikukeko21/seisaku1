@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\Route;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -11,6 +12,18 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Auth::routes();
+Route::group(['middleware' => ['auth']], function (){
+    Route::get('/posts/bihin', 'PostController@bihin');
+    Route::get('/posts/{post}/edit', 'PostController@edit');
+    Route::put('/posts/{post}', 'PostController@update');
+    Route::post('/posts', 'PostController@store');
+    Route::delete('/posts/{post}', 'PostController@delete');
+    Route::get('/posts/{post}', 'PostController@show');
+    Route::get('/', 'PostController@index');
+
+    Route::get('/names/shimei', 'NameController@shimei');
+    Route::post('/names', 'NameController@store');
+    Route::get('/names/{name}', 'NameController@nameshow');
+    Route::get('/name', 'NameController@index');
 });
